@@ -1,5 +1,6 @@
+let process = require('process');
 let appInsights = require("applicationinsights");
-appInsights.setup("InstrumentationKey=9054d4f6-4f02-46d2-bbe9-3ad375ddb6c6;IngestionEndpoint=https://westeurope-5.in.applicationinsights.azure.com/;LiveEndpoint=https://westeurope.livediagnostics.monitor.azure.com/")
+appInsights.setup(process.env.APPLICATIONINSIGHTS_CONNECTION_STRING)
     .setAutoDependencyCorrelation(true)
     .setAutoCollectRequests(true)
     .setAutoCollectPerformance(true, true)
